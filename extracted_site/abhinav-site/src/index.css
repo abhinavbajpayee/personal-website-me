@@ -1,0 +1,163 @@
+@import "tailwindcss";
+
+@theme {
+  /* ---- Color tokens ---- */
+  --color-void: #0A0B0D;
+  --color-graphite: #14161A;
+  --color-graphite-soft: #1B1E24;
+  --color-hairline: rgba(255,255,255,0.08);
+  --color-hairline-strong: rgba(255,255,255,0.14);
+
+  --color-ink: #E8E6E1;
+  --color-ink-muted: #8B8D93;
+  --color-ink-faint: #5C5E64;
+
+  --color-current: #3B82F6;
+  --color-current-soft: #93B8F5;
+  --color-current-dim: rgba(59,130,246,0.12);
+
+  --color-amber: #D4A24C;
+  --color-amber-soft: #E8C384;
+  --color-amber-dim: rgba(212,162,76,0.12);
+
+  /* ---- Type ---- */
+  --font-display: "Fraunces", serif;
+  --font-sans: "Inter", -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--color-void);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--color-ink);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: var(--color-current-dim);
+  color: var(--color-ink);
+}
+
+/* Visible keyboard focus everywhere */
+:focus-visible {
+  outline: 2px solid var(--color-current-soft);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Eyebrow / label style used across section headers */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-ink-muted);
+}
+
+.glass {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--color-hairline);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* ---- Plain color utilities ----
+   Defined manually (not via Tailwind arbitrary values) to avoid
+   selector-escaping issues with var() inside bracket syntax. */
+.text-void { color: var(--color-void); }
+.text-ink { color: var(--color-ink); }
+.text-ink-muted { color: var(--color-ink-muted); }
+.text-ink-faint { color: var(--color-ink-faint); }
+.text-current-accent { color: var(--color-current); }
+.text-current-soft { color: var(--color-current-soft); }
+.text-amber-accent { color: var(--color-amber); }
+.text-amber-soft { color: var(--color-amber-soft); }
+
+.bg-void { background-color: var(--color-void); }
+.bg-ink { background-color: var(--color-ink); }
+.bg-graphite { background-color: var(--color-graphite); }
+.bg-graphite-soft { background-color: var(--color-graphite-soft); }
+.bg-hairline { background-color: var(--color-hairline); }
+.bg-ink-faint { background-color: var(--color-ink-faint); }
+.bg-current-accent { background-color: var(--color-current); }
+.bg-current-dim { background-color: var(--color-current-dim); }
+.bg-amber-accent { background-color: var(--color-amber); }
+.bg-amber-dim { background-color: var(--color-amber-dim); }
+.bg-amber-soft { background-color: var(--color-amber-soft); }
+
+.border-hairline { border-color: var(--color-hairline); }
+.border-hairline-strong { border-color: var(--color-hairline-strong); }
+.border-current-soft { border-color: var(--color-current-soft); }
+.border-ink-faint { border-color: var(--color-ink-faint); }
+.border-amber-accent { border-color: var(--color-amber); }
+
+.hover\:text-ink:hover { color: var(--color-ink); }
+.hover\:text-current-soft:hover { color: var(--color-current-soft); }
+.hover\:text-amber-soft:hover { color: var(--color-amber-soft); }
+.hover\:bg-amber-soft:hover { background-color: var(--color-amber-soft); }
+.hover\:border-current-soft:hover { border-color: var(--color-current-soft); }
+.hover\:border-hairline-strong:hover { border-color: var(--color-hairline-strong); }
+.focus\:border-current-soft:focus { border-color: var(--color-current-soft); }
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-void);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-graphite-soft);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-hairline-strong);
+}

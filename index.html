@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Abhinav Bajpai - AI & ML Developer, Published Author, and Student Leader specializing in growth strategies, AI assistants, and public policy.">
+    <title>ABHINAV BAJPAI // SYSTEMS, GROWTH & LEADERSHIP</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Styling -->
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <!-- Avengers Cinematic Preloader -->
+    <div id="preloader" class="preloader-overlay">
+        <div class="preloader-content">
+            <div class="shield-container">
+                <svg viewBox="0 0 100 100" class="cap-shield" id="preloader-shield">
+                    <!-- Outer Red Ring -->
+                    <circle cx="50" cy="50" r="45" fill="#e62429" />
+                    <!-- Silver/White Ring -->
+                    <circle cx="50" cy="50" r="37" fill="#f2f2f2" />
+                    <!-- Inner Red Ring -->
+                    <circle cx="50" cy="50" r="29" fill="#e62429" />
+                    <!-- Blue Center -->
+                    <circle cx="50" cy="50" r="21" fill="#0f4c81" />
+                    <!-- White Star in Center -->
+                    <polygon points="50,33 54,42 64,43 56,49 59,59 50,53 41,59 44,49 36,43 46,42" fill="#ffffff" />
+                </svg>
+                <div class="shield-glow"></div>
+                <div class="radar-ring"></div>
+                <div class="radar-ring delay-1"></div>
+            </div>
+            <div class="preloader-text-group">
+                <div class="preloader-title">ASSEMBLING SYSTEMS</div>
+                <div class="preloader-subtitle" id="preloader-console">RETRIEVING SYSTEMS INTEGRATION STATUS...</div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Slim minimalist Navigation Bar -->
+    <header class="nav-bar">
+        <nav class="nav-container">
+            <a href="#hero" class="nav-logo" id="nav-logo-link">
+                ABHINAV BAJPAI <span class="accent-red">// PORTFOLIO</span>
+            </a>
+            <div class="nav-links">
+                <a href="#experience" class="nav-link" id="nav-link-experience">TIMELINE</a>
+                <a href="#projects" class="nav-link" id="nav-link-projects">PROJECTS</a>
+                <a href="#leadership" class="nav-link" id="nav-link-leadership">LEADERSHIP</a>
+                <a href="#skills" class="nav-link" id="nav-link-skills">POWERS</a>
+                <a href="#contact" class="nav-link-cta" id="nav-link-contact-cta">CONNECT</a>
+            </div>
+            <button class="menu-toggle" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile Drawer Overlay -->
+    <div class="mobile-drawer" id="mobile-drawer">
+        <div class="drawer-links">
+            <a href="#hero" class="drawer-link" id="drawer-link-hero">HOME</a>
+            <a href="#experience" class="drawer-link" id="drawer-link-experience">TIMELINE</a>
+            <a href="#projects" class="drawer-link" id="drawer-link-projects">PROJECTS</a>
+            <a href="#leadership" class="drawer-link" id="drawer-link-leadership">LEADERSHIP</a>
+            <a href="#skills" class="drawer-link" id="drawer-link-skills">POWERS</a>
+            <a href="#contact" class="drawer-link" id="drawer-link-contact">CONNECT</a>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <main>
+
+        <!-- Dynamic Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-bg-container">
+                <div class="hero-bg-overlay"></div>
+                <img src="background.jpg" alt="Futuristic digital network lines" class="hero-bg-image" id="hero-bg-img">
+            </div>
+
+            <div class="container hero-content-grid">
+                <!-- Text Content Left -->
+                <div class="hero-text-block">
+                    <div class="system-status-indicator" id="status-indicator">
+                        <span class="status-dot"></span>
+                        <span class="status-text" id="typewriter-status">SYSTEM STATUS: ACTIVE // NODE-09 // LATENCY
+                            0.04ms</span>
+                    </div>
+
+                    <h1 class="hero-title" id="hero-main-title">
+                        <span class="reveal-line">ABHINAV</span>
+                        <span class="reveal-line accent-red">BAJPAI</span>
+                    </h1>
+
+                    <h2 class="hero-subtitle" id="hero-sub-title">
+                        AI & ML Developer // Published Author // Student Leader
+                    </h2>
+
+                    <p class="hero-description" id="hero-desc-para">
+                        Undergraduate in Computer Science Engineering (AI & ML) at Jaypee University of Information
+                        Technology. Synthesizing system engineering, growth strategy, and high-impact campus leadership.
+                        <br><br>
+                        <span class="accent-red">"Live well. Learn deeply. Lead quietly."</span>
+                    </p>
+
+                    <div class="hero-cta-group">
+                        <a href="#projects" class="btn-primary" id="hero-cta-projects">VIEW ARCHITECTURES</a>
+                        <a href="#contact" class="btn-secondary" id="hero-cta-contact">TRANSMIT PROTOCOL</a>
+                    </div>
+
+                    <!-- Stats Grid integrated into Hero -->
+                    <div class="hero-stats-panel">
+                        <div class="hero-stat-item">
+                            <span class="stat-value">30+</span>
+                            <span class="stat-label">MUN CHAIRINGS</span>
+                        </div>
+                        <div class="hero-stat-item">
+                            <span class="stat-value">900+</span>
+                            <span class="stat-label">DELEGATES MENTORED</span>
+                        </div>
+                        <div class="hero-stat-item">
+                            <span class="stat-value">1</span>
+                            <span class="stat-label">PUBLISHED BOOK</span>
+                        </div>
+                        <div class="hero-stat-item">
+                            <span class="stat-value">5</span>
+                            <span class="stat-label">ORGANIZATIONS LED</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Character Portrait Right (Frame Breaking) -->
+                <div class="hero-image-block" id="hero-portrait-block">
+                    <div class="hero-image-wrapper" style="background-color: #111111;">
+                        <img src="screen.png" alt="Abhinav Bajpai Portrait" class="hero-portrait"
+                            id="hero-portrait-img" style="object-fit: cover; object-position: center top;">
+                        <div class="hero-frame-border top-left"></div>
+                        <div class="hero-frame-border bottom-right"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Experience -->
+        <section id="experience" class="experience-section">
+            <div class="section-divider-bg" aria-hidden="true">EXPERIENCE</div>
+
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label accent-red">01 // CAREER PATH</span>
+                    <h2 class="section-title">THE TIMELINE</h2>
+                </div>
+
+                <div class="timeline-grid">
+                    <!-- Timeline Card 1 -->
+                    <div class="timeline-item" id="timeline-item-1">
+                        <div class="timeline-meta">
+                            <span class="timeline-year accent-red">DEC 2025 - PRESENT</span>
+                            <span class="timeline-company">ASTRENOX TECHNOLOGIES</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-role">GROWTH CONSULTANT</h3>
+                            <p class="timeline-desc">
+                                Supporting startup growth initiatives through comprehensive market research, audience
+                                positioning, and go-to-market (GTM) execution frameworks. Analyzing campaign metrics to
+                                drive digital audience engagement.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Card 2 -->
+                    <div class="timeline-item" id="timeline-item-2">
+                        <div class="timeline-meta">
+                            <span class="timeline-year accent-red">FEB 2026 - PRESENT</span>
+                            <span class="timeline-company">ZURAA</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-role">HUMAN RESOURCES HEAD</h3>
+                            <p class="timeline-desc">
+                                Leading end-to-end recruitment pipelines, personnel onboarding, and active employee
+                                engagement campaigns. Streamlining multi-tier workflows to scale corporate operations.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Card 3 -->
+                    <div class="timeline-item" id="timeline-item-3">
+                        <div class="timeline-meta">
+                            <span class="timeline-year accent-red">JUN 2024 - PRESENT</span>
+                            <span class="timeline-company">INTERNEXUS</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-role">PUBLIC RELATIONS HEAD</h3>
+                            <p class="timeline-desc">
+                                Established critical partnerships with leading universities and student hubs across
+                                India. Conducting corporate outreach campaigns to elevate brand footprint and ecosystem
+                                engagement.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Card 4 -->
+                    <div class="timeline-item" id="timeline-item-4">
+                        <div class="timeline-meta">
+                            <span class="timeline-year accent-red">APR 2025 - OCT 2025</span>
+                            <span class="timeline-company">RANGMANCH EVENT MANAGEMENT</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-role">GRAPHIC DESIGN INTERN</h3>
+                            <p class="timeline-desc">
+                                Designed dynamic campaign graphics and promotional materials, aligning brand aesthetics
+                                with user experience to boost social outreach.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Card 5 -->
+                    <div class="timeline-item" id="timeline-item-5">
+                        <div class="timeline-meta">
+                            <span class="timeline-year accent-red">APR 2024 - OCT 2024</span>
+                            <span class="timeline-company">GLOBAL PODIUM</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-role">MARKETING STRATEGY COORDINATOR</h3>
+                            <p class="timeline-desc">
+                                Conducted audience segmentation, demographic profiling, and promotional structuring for
+                                domestic and international youth leadership platforms.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Projects -->
+        <section id="projects" class="projects-section">
+            <div class="section-divider-bg" aria-hidden="true">PROJECTS</div>
+
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label accent-red">02 // ARCHITECTURES</span>
+                    <h2 class="section-title">TECHNICAL & CREATIVE DEPLOYMENTS</h2>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Project Card 1: Academic Ally -->
+                    <article class="project-card" id="project-card-1">
+                        <div class="project-image-container">
+                            <img src="project_quantum.png" alt="Academic Ally Platform Interface" class="project-image">
+                            <div class="project-overlay"></div>
+                        </div>
+                        <div class="project-info">
+                            <span class="project-category accent-red">AI & NATURAL LANGUAGE PROCESSING</span>
+                            <h3 class="project-title">01 // ACADEMIC ALLY</h3>
+                            <p class="project-description">
+                                An intelligent, context-aware academic assistant. Links a Flask backend engine utilizing
+                                NLP with a responsive React dashboard to deliver personalized educational guidance.
+                                Recognized at the IEEE Ignite-a-thon 2025.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag-pill">Python</span>
+                                <span class="tag-pill">Flask</span>
+                                <span class="tag-pill">React</span>
+                                <span class="tag-pill">NLP</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project Card 2: Slot Smart -->
+                    <article class="project-card" id="project-card-2">
+                        <div class="project-image-container">
+                            <img src="project_neural.png" alt="Algorithmic Timetable Visualization"
+                                class="project-image">
+                            <div class="project-overlay"></div>
+                        </div>
+                        <div class="project-info">
+                            <span class="project-category accent-red">ALGORITHMIC SCHEDULING</span>
+                            <h3 class="project-title">02 // SLOT SMART</h3>
+                            <p class="project-description">
+                                A constraint-based scheduling engine that automates timetable generation. Leverages
+                                customized preference scoring matrices to eliminate scheduling conflicts. Smart India
+                                Hackathon Finalist.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag-pill">Python</span>
+                                <span class="tag-pill">Optimization</span>
+                                <span class="tag-pill">Algorithms</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project Card 3: The Book -->
+                    <article class="project-card" id="project-card-3">
+                        <div class="project-image-container">
+                            <img src="book-cover.jpg" alt="9 Secrets of College Life Cover" class="project-image"
+                                style="object-position: center 20%;">
+                            <div class="project-overlay"></div>
+                        </div>
+                        <div class="project-info">
+                            <span class="project-category accent-red">EDITORIAL & PUBLISHING</span>
+                            <h3 class="project-title">03 // 9 SECRETS OF COLLEGE LIFE</h3>
+                            <p class="project-description">
+                                Wrote and published an actionable playbook on growth, purpose, and community building in
+                                university life. Offers a direct, practical look at leadership from the middle of the
+                                college experience.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag-pill">Writing</span>
+                                <span class="tag-pill">Leadership</span>
+                                <span class="tag-pill">Strategy</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Leadership & Model UN -->
+        <section id="leadership" class="leadership-section" style="background-color: var(--surface-container-low);">
+            <div class="section-divider-bg" aria-hidden="true">LEADER</div>
+
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label accent-red">03 // DIPLOMACY & FORUMS</span>
+                    <h2 class="section-title">CAMPUS LEADERSHIP & MUN</h2>
+                </div>
+
+                <div class="leadership-showcase-grid">
+                    <!-- Text side -->
+                    <div class="leadership-details">
+                        <div class="leadership-role-card">
+                            <h3 class="role-title">EXECUTIVE BOARD MEMBER, CHAIRPERSON & MENTOR</h3>
+                            <span class="role-org accent-red">MODEL UNITED NATIONS CIRCUIT</span>
+                            <p class="role-body">
+                                Chaired 30+ MUN conferences, managing complex committees and policy debates. Mentored
+                                over 900+ delegates in negotiation frameworks, geopolitics, and persuasive public
+                                speaking.
+                            </p>
+                        </div>
+                        <div class="leadership-role-card">
+                            <h3 class="role-title">VOCATIONAL SERVICES DIRECTOR</h3>
+                            <span class="role-org accent-red">ROTARACT CLUB OF WAKNAGHAT</span>
+                            <p class="role-body">
+                                Spearheading youth empowerment initiatives, vocational workshops, community development
+                                programs, and volunteer deployment.
+                            </p>
+                        </div>
+
+                        <div class="leadership-role-card">
+                            <h3 class="role-title">PUBLIC RELATIONS HEAD</h3>
+                            <span class="role-org accent-red">JUIT ALUMNI CELL</span>
+                            <p class="role-body">
+                                Leading alumni outreach campaigns and strengthening relationship channels between
+                                current undergraduates and graduates.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Image side (MUN Dais image) -->
+                    <div class="leadership-visual">
+                        <div class="leadership-image-wrapper">
+                            <img src="hero-dais.jpeg" alt="Abhinav Bajpai at MUN Podium" class="leadership-img">
+                            <div class="leadership-caption">
+                                <span>CHAIRING MODEL UNITED NATIONS DEBATES</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Skills -->
+        <section id="skills" class="skills-section">
+            <div class="section-divider-bg" aria-hidden="true">POWERS</div>
+
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label accent-red">04 // STACK MATRIX</span>
+                    <h2 class="section-title">CAPABILITIES</h2>
+                </div>
+
+                <div class="skills-wrapper">
+                    <!-- Category 1: Technical -->
+                    <div class="skills-category-block" id="skills-cat-1">
+                        <h3 class="skills-category-title">SYSTEMS & AI DEVELOPMENT</h3>
+                        <div class="skills-chips-group">
+                            <span class="skill-chip">Python</span>
+                            <span class="skill-chip">React.js</span>
+                            <span class="skill-chip">Flask</span>
+                            <span class="skill-chip">JavaScript</span>
+                            <span class="skill-chip">Node.js</span>
+                            <span class="skill-chip">HTML/CSS</span>
+                            <span class="skill-chip">C (Basics)</span>
+                            <span class="skill-chip">NLP Basics</span>
+                            <span class="skill-chip">Optimization Algorithms</span>
+                        </div>
+                    </div>
+
+                    <!-- Category 2: Management -->
+                    <div class="skills-category-block" id="skills-cat-2">
+                        <h3 class="skills-category-title">LEADERSHIP & GROWTH</h3>
+                        <div class="skills-chips-group">
+                            <span class="skill-chip">GTM Strategy</span>
+                            <span class="skill-chip">Public Relations</span>
+                            <span class="skill-chip">Audience Research</span>
+                            <span class="skill-chip">Recruitment Ops</span>
+                            <span class="skill-chip">Public Speaking</span>
+                            <span class="skill-chip">Team Management</span>
+                            <span class="skill-chip">Negotiation</span>
+                            <span class="skill-chip">Brand Strategy</span>
+                            <span class="skill-chip">Canva & Figma</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certifications Grid -->
+                <div class="certifications-grid-block">
+                    <h3 class="certifications-title">CERTIFICATIONS & HONORS</h3>
+                    <div class="certs-list">
+                        <div class="cert-item">
+                            <span class="cert-name">IEEE Ignite-a-thon 2025 Innovation Recognition</span>
+                            <span class="cert-detail">// Winner for Academic Ally</span>
+                        </div>
+                        <div class="cert-item">
+                            <span class="cert-name">Smart India Hackathon Finalist</span>
+                            <span class="cert-detail">// Internal Selection Round Qualifier</span>
+                        </div>
+                        <div class="cert-item">
+                            <span class="cert-name">McKinsey.org Forward Program Graduate</span>
+                            <span class="cert-detail">// Professional Skill-Building</span>
+                        </div>
+                        <div class="cert-item">
+                            <span class="cert-name">NASSCOM Prompt Engineering Certified</span>
+                            <span class="cert-detail">// Applied Generative AI</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Contact -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="contact-card" id="contact-panel">
+                    <span class="section-label accent-red">05 // PROTOCOL INITIALIZATION</span>
+                    <h2 class="contact-title">INITIALIZE JOINT VENTURE</h2>
+                    <p class="contact-description">
+                        Establish routing channels for growth consulting, AI development requests, MUN chairing
+                        bookings, or academic collaboration.
+                    </p>
+
+                    <form class="contact-form" id="main-contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="form-name">IDENTIFIER (NAME)</label>
+                                <input type="text" id="form-name" required placeholder="e.g. MARCUS VANCE">
+                            </div>
+                            <div class="form-group">
+                                <label for="form-email">ROUTING ENDPOINT (EMAIL)</label>
+                                <input type="email" id="form-email" required placeholder="e.g. marcus@corporation.com">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-message">TRANSMISSION CONTENT (MESSAGE)</label>
+                            <textarea id="form-message" rows="5" required
+                                placeholder="State your GTM objectives, technical specifications, or MUN timelines..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary" id="form-submit-btn">TRANSMIT PROTOCOL</button>
+                    </form>
+
+                    <div class="form-status-msg" id="form-status">
+                        TRANSMISSION SUCCESSFULLY ROUTED // WE WILL INITIATE CONTACT
+                    </div>
+
+                    <!-- Direct Contacts -->
+                    <div class="direct-contacts">
+                        <div class="contact-method">
+                            <span class="contact-label">EMAIL:</span>
+                            <a href="mailto:abhinavbajpayee88@gmail.com"
+                                class="contact-value">abhinavbajpayee88@gmail.com</a>
+                        </div>
+                        <div class="contact-method">
+                            <span class="contact-label">ROUTING:</span>
+                            <a href="tel:+919236405301" class="contact-value">+91 9236405301</a>
+                        </div>
+                        <div class="contact-socials">
+                            <a href="https://www.linkedin.com/in/abhinav-bajpai-58b36128b/" target="_blank"
+                                class="social-link">LINKEDIN</a> //
+                            <a href="https://github.com/abhinavbajpayee" target="_blank" class="social-link">GITHUB</a> //
+                            <a href="https://leetcode.com/abhinavbajpai" target="_blank"
+                                class="social-link">LEETCODE</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Simple Cinematic Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-left">
+                <span>© 2026 ABHINAV BAJPAI. ALL RIGHTS RESERVED.</span>
+            </div>
+            <div class="footer-right">
+                <span class="accent-red">STATUS: ACTIVE // SECURITY LEVEL 4 // STITCH ENGAGED</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Form Submission Cinematic Loader Overlay -->
+    <div id="form-loader-overlay" class="form-loader-overlay">
+        <div class="form-loader-content">
+            <div class="shield-spinner">
+                <svg viewBox="0 0 100 100" class="cap-shield spinner-shield">
+                    <!-- Outer Red Ring -->
+                    <circle cx="50" cy="50" r="45" fill="#e62429" />
+                    <!-- Silver/White Ring -->
+                    <circle cx="50" cy="50" r="37" fill="#f2f2f2" />
+                    <!-- Inner Red Ring -->
+                    <circle cx="50" cy="50" r="29" fill="#e62429" />
+                    <!-- Blue Center -->
+                    <circle cx="50" cy="50" r="21" fill="#0f4c81" />
+                    <!-- White Star in Center -->
+                    <polygon points="50,33 54,42 64,43 56,49 59,59 50,53 41,59 44,49 36,43 46,42" fill="#ffffff" />
+                </svg>
+                <div class="spinner-ring"></div>
+            </div>
+            <div class="loader-terminal">
+                <div class="terminal-line" id="term-line-1">&gt; INITIALIZING SECURE UPLINK...</div>
+                <div class="terminal-line" id="term-line-2"></div>
+                <div class="terminal-line" id="term-line-3"></div>
+                <div class="terminal-line" id="term-line-4"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript logic and animations -->
+    <script src="index.js"></script>
+</body>
+
+</html>
