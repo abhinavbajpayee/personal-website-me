@@ -250,14 +250,9 @@
             <div class="section-divider-bg" aria-hidden="true">PROJECTS</div>
 
             <div class="container">
-                <div class="section-header project-header-flex">
-                    <div>
-                        <span class="section-label accent-red">02 // ARCHITECTURES</span>
-                        <h2 class="section-title">TECHNICAL & CREATIVE DEPLOYMENTS</h2>
-                    </div>
-                    <button class="btn-primary" id="add-project-trigger">
-                        + INITIALIZE DEPLOYMENT
-                    </button>
+                <div class="section-header">
+                    <span class="section-label accent-red">02 // ARCHITECTURES</span>
+                    <h2 class="section-title">TECHNICAL & CREATIVE DEPLOYMENTS</h2>
                 </div>
 
                 <div class="projects-grid">
@@ -569,51 +564,6 @@
                 <div class="terminal-line" id="term-line-3"></div>
                 <div class="terminal-line" id="term-line-4"></div>
             </div>
-        </div>
-    </div>
-
-    <!-- Project Deployment Modal -->
-    <div id="project-modal" class="modal-overlay">
-        <div class="modal-card">
-            <button class="modal-close-btn" id="modal-close-trigger" aria-label="Close Modal">&times;</button>
-            <div class="modal-header">
-                <span class="modal-label accent-red">// NODE-09 SECURITY INTERFACE</span>
-                <h3 class="modal-title">INITIALIZE NEW ARCHITECTURE</h3>
-            </div>
-            <form id="add-project-form" class="modal-form">
-                <div class="form-group">
-                    <label for="proj-title">DEPLOYMENT NAME (PROJECT TITLE)</label>
-                    <input type="text" id="proj-title" required placeholder="e.g. JARVIS CORE INTEGRATION">
-                </div>
-                <div class="form-group">
-                    <label for="proj-category">SYSTEM CATEGORY (PROJECT CATEGORY)</label>
-                    <input type="text" id="proj-category" required placeholder="e.g. AI CORE // QUANTUM COMPUTING">
-                </div>
-                <div class="form-group">
-                    <label for="proj-description">ARCHITECTURAL OVERVIEW (DESCRIPTION)</label>
-                    <textarea id="proj-description" rows="3" required placeholder="Describe the system objectives, backend tech, and key outcomes..."></textarea>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="proj-tags">SYSTEM TAGS (COMMA SEPARATED)</label>
-                        <input type="text" id="proj-tags" required placeholder="e.g. Python, NLP, React">
-                    </div>
-                    <div class="form-group">
-                        <label for="proj-link">LIVE ROUTING ENDPOINT (LIVE LINK URL)</label>
-                        <input type="url" id="proj-link" required placeholder="https://example.com/project">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="proj-image">VISUAL REPRESENTATION (IMAGE UPLOAD OR URL)</label>
-                    <div class="image-input-container">
-                        <input type="file" id="proj-image-file" accept="image/*" class="file-input-hidden">
-                        <button type="button" class="btn-secondary file-upload-btn" id="file-upload-btn">UPLOAD IMAGE FILE</button>
-                        <span class="file-name-display" id="file-name-display">Or paste image URL below...</span>
-                        <input type="text" id="proj-image-url" placeholder="https://example.com/image.png (Optional if file uploaded)">
-                    </div>
-                </div>
-                <button type="submit" class="btn-primary modal-submit-btn">AUTHORIZE DEPLOYMENT</button>
-            </form>
         </div>
     </div>
 
