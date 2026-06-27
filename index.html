@@ -145,7 +145,7 @@
                 <!-- Character Portrait Right (Frame Breaking) -->
                 <div class="hero-image-block" id="hero-portrait-block">
                     <div class="hero-image-wrapper" style="background-color: #111111;">
-                        <img src="screen.png" alt="Abhinav Bajpai Portrait" class="hero-portrait"
+                        <img src="intro.png" alt="Abhinav Bajpai Portrait" class="hero-portrait"
                             id="hero-portrait-img" style="object-fit: cover; object-position: center top;">
                         <div class="hero-frame-border top-left"></div>
                         <div class="hero-frame-border bottom-right"></div>
@@ -250,9 +250,14 @@
             <div class="section-divider-bg" aria-hidden="true">PROJECTS</div>
 
             <div class="container">
-                <div class="section-header">
-                    <span class="section-label accent-red">02 // ARCHITECTURES</span>
-                    <h2 class="section-title">TECHNICAL & CREATIVE DEPLOYMENTS</h2>
+                <div class="section-header project-header-flex">
+                    <div>
+                        <span class="section-label accent-red">02 // ARCHITECTURES</span>
+                        <h2 class="section-title">TECHNICAL & CREATIVE DEPLOYMENTS</h2>
+                    </div>
+                    <button class="btn-primary" id="add-project-trigger">
+                        + INITIALIZE DEPLOYMENT
+                    </button>
                 </div>
 
                 <div class="projects-grid">
@@ -270,11 +275,17 @@
                                 NLP with a responsive React dashboard to deliver personalized educational guidance.
                                 Recognized at the IEEE Ignite-a-thon 2025.
                             </p>
-                            <div class="project-tags">
-                                <span class="tag-pill">Python</span>
-                                <span class="tag-pill">Flask</span>
-                                <span class="tag-pill">React</span>
-                                <span class="tag-pill">NLP</span>
+                            <div class="project-actions">
+                                <div class="project-tags">
+                                    <span class="tag-pill">Python</span>
+                                    <span class="tag-pill">Flask</span>
+                                    <span class="tag-pill">React</span>
+                                    <span class="tag-pill">NLP</span>
+                                </div>
+                                <a href="https://github.com/abhinavbajpayee/academic-ally" target="_blank" class="project-link">
+                                    <span>LAUNCH DEPLOYMENT</span>
+                                    <svg viewBox="0 0 24 24"><path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/></svg>
+                                </a>
                             </div>
                         </div>
                     </article>
@@ -294,10 +305,16 @@
                                 customized preference scoring matrices to eliminate scheduling conflicts. Smart India
                                 Hackathon Finalist.
                             </p>
-                            <div class="project-tags">
-                                <span class="tag-pill">Python</span>
-                                <span class="tag-pill">Optimization</span>
-                                <span class="tag-pill">Algorithms</span>
+                            <div class="project-actions">
+                                <div class="project-tags">
+                                    <span class="tag-pill">Python</span>
+                                    <span class="tag-pill">Optimization</span>
+                                    <span class="tag-pill">Algorithms</span>
+                                </div>
+                                <a href="https://github.com/abhinavbajpayee/slot-smart" target="_blank" class="project-link">
+                                    <span>LAUNCH DEPLOYMENT</span>
+                                    <svg viewBox="0 0 24 24"><path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/></svg>
+                                </a>
                             </div>
                         </div>
                     </article>
@@ -317,10 +334,16 @@
                                 university life. Offers a direct, practical look at leadership from the middle of the
                                 college experience.
                             </p>
-                            <div class="project-tags">
-                                <span class="tag-pill">Writing</span>
-                                <span class="tag-pill">Leadership</span>
-                                <span class="tag-pill">Strategy</span>
+                            <div class="project-actions">
+                                <div class="project-tags">
+                                    <span class="tag-pill">Writing</span>
+                                    <span class="tag-pill">Leadership</span>
+                                    <span class="tag-pill">Strategy</span>
+                                </div>
+                                <a href="https://www.amazon.com" target="_blank" class="project-link">
+                                    <span>LAUNCH DEPLOYMENT</span>
+                                    <svg viewBox="0 0 24 24"><path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/></svg>
+                                </a>
                             </div>
                         </div>
                     </article>
@@ -546,6 +569,51 @@
                 <div class="terminal-line" id="term-line-3"></div>
                 <div class="terminal-line" id="term-line-4"></div>
             </div>
+        </div>
+    </div>
+
+    <!-- Project Deployment Modal -->
+    <div id="project-modal" class="modal-overlay">
+        <div class="modal-card">
+            <button class="modal-close-btn" id="modal-close-trigger" aria-label="Close Modal">&times;</button>
+            <div class="modal-header">
+                <span class="modal-label accent-red">// NODE-09 SECURITY INTERFACE</span>
+                <h3 class="modal-title">INITIALIZE NEW ARCHITECTURE</h3>
+            </div>
+            <form id="add-project-form" class="modal-form">
+                <div class="form-group">
+                    <label for="proj-title">DEPLOYMENT NAME (PROJECT TITLE)</label>
+                    <input type="text" id="proj-title" required placeholder="e.g. JARVIS CORE INTEGRATION">
+                </div>
+                <div class="form-group">
+                    <label for="proj-category">SYSTEM CATEGORY (PROJECT CATEGORY)</label>
+                    <input type="text" id="proj-category" required placeholder="e.g. AI CORE // QUANTUM COMPUTING">
+                </div>
+                <div class="form-group">
+                    <label for="proj-description">ARCHITECTURAL OVERVIEW (DESCRIPTION)</label>
+                    <textarea id="proj-description" rows="3" required placeholder="Describe the system objectives, backend tech, and key outcomes..."></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="proj-tags">SYSTEM TAGS (COMMA SEPARATED)</label>
+                        <input type="text" id="proj-tags" required placeholder="e.g. Python, NLP, React">
+                    </div>
+                    <div class="form-group">
+                        <label for="proj-link">LIVE ROUTING ENDPOINT (LIVE LINK URL)</label>
+                        <input type="url" id="proj-link" required placeholder="https://example.com/project">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="proj-image">VISUAL REPRESENTATION (IMAGE UPLOAD OR URL)</label>
+                    <div class="image-input-container">
+                        <input type="file" id="proj-image-file" accept="image/*" class="file-input-hidden">
+                        <button type="button" class="btn-secondary file-upload-btn" id="file-upload-btn">UPLOAD IMAGE FILE</button>
+                        <span class="file-name-display" id="file-name-display">Or paste image URL below...</span>
+                        <input type="text" id="proj-image-url" placeholder="https://example.com/image.png (Optional if file uploaded)">
+                    </div>
+                </div>
+                <button type="submit" class="btn-primary modal-submit-btn">AUTHORIZE DEPLOYMENT</button>
+            </form>
         </div>
     </div>
 
