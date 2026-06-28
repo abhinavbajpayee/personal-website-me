@@ -57,14 +57,49 @@ function init() {
         setTimeout(type, 1400);
     }
 
-    // --- Navigation Scroll Effect ---
+    // --- Navigation Scroll Effect & Floating Capsule Indicators ---
     const navBar = document.querySelector('.nav-bar');
+    const indicator = document.querySelector('.nav-indicator-bg');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section');
+    let activeLink = null;
+    let isHovering = false;
+
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             navBar.classList.add('scrolled');
         } else {
             navBar.classList.remove('scrolled');
         }
+    });
+
+    function setIndicator(link) {
+        if (!indicator || !link) return;
+        indicator.style.left = `${link.offsetLeft}px`;
+        indicator.style.width = `${link.offsetWidth}px`;
+        indicator.style.opacity = '1';
+    }
+
+    function clearIndicator() {
+        if (!indicator) return;
+        indicator.style.opacity = '0';
+    }
+
+    // Hover glide animation
+    navLinks.forEach(link => {
+        link.addEventListener('mouseenter', () => {
+            isHovering = true;
+            setIndicator(link);
+        });
+
+        link.addEventListener('mouseleave', () => {
+            isHovering = false;
+            if (activeLink) {
+                setIndicator(activeLink);
+            } else {
+                clearIndicator();
+            }
+        });
     });
 
     // --- Mobile Menu Toggle ---
@@ -111,8 +146,8 @@ function init() {
         });
     }, observerOptions);
 
-    // Register timeline, categories, leadership cards, and certs
-    const animatableElements = document.querySelectorAll('.timeline-item, .skills-category-block, .leadership-role-card, .cert-item');
+    // Register timeline, categories, leadership cards, certs, section headers, and contact panel
+    const animatableElements = document.querySelectorAll('.timeline-item, .skills-category-block, .leadership-role-card, .cert-item, .section-header, .contact-card');
     animatableElements.forEach(el => animateOnScroll.observe(el));
 
     // --- Layout-Free Parallax Scrolling Effect ---
@@ -168,7 +203,62 @@ function init() {
                 divider.style.transform = `translateX(calc(-50% + ${translation}px))`;
             }
         });
+
+        // Update active navigation link on scroll
+        if (!isHovering) {
+            let currentSectionId = '';
+            const scrollPosition = scrolled + 220; // detection offset
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    currentSectionId = section.getAttribute('id');
+                }
+            });
+
+            if (currentSectionId) {
+                const active = document.querySelector(`.nav-link[href="#${currentSectionId}"]`);
+                if (active) {
+                    activeLink = active;
+                    setIndicator(active);
+                } else {
+                    activeLink = null;
+                    clearIndicator();
+                }
+            } else {
+                activeLink = null;
+                clearIndicator();
+            }
+        }
     });
+
+    // Re-trigger indicator calculation on window resize
+    window.addEventListener('resize', () => {
+        cacheSectionPositions();
+        if (activeLink) setIndicator(activeLink);
+    });
+
+    // Run active link detection on initial load
+    function initActiveNav() {
+        let currentSectionId = '';
+        const scrollPosition = window.scrollY + 220;
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                currentSectionId = section.getAttribute('id');
+            }
+        });
+        if (currentSectionId) {
+            const active = document.querySelector(`.nav-link[href="#${currentSectionId}"]`);
+            if (active) {
+                activeLink = active;
+                setIndicator(active);
+            }
+        }
+    }
+    setTimeout(initActiveNav, 400);
 
     // --- Interactive 3D Hover Effect ---
     const heroPortraitBlock = document.getElementById('hero-portrait-block');
@@ -415,12 +505,12 @@ function init() {
         });
     }
 
-    // --- Interactive 3D Tilt Hover Effect for Skills Cards ---
+    // --- Interactive Spotlight Hover Effect for Skills Cards ---
     const skillsCategoryBlocks = document.querySelectorAll('.skills-category-block');
-    if (skillsCategoryBlocks.length > 0 && window.innerWidth > 992) {
+    if (skillsCategoryBlocks.length > 0) {
         skillsCategoryBlocks.forEach(block => {
             block.addEventListener('mousemove', (e) => {
-                // Do not apply tilt if it is currently faded out in a different mode
+                // Do not apply spotlight if it is currently faded out in a different mode
                 const parent = block.parentElement;
                 if (parent.classList.contains('mode-recruiter') && block.id !== 'skills-cat-1' && block.id !== 'skills-cat-3') return;
                 if (parent.classList.contains('mode-academic') && block.id !== 'skills-cat-2' && block.id !== 'skills-cat-3') return;
@@ -429,13 +519,6 @@ function init() {
                 const x = e.clientX - bounding.left;
                 const y = e.clientY - bounding.top;
                 
-                const xRotation = ((y - bounding.height / 2) / bounding.height) * -8; // slight tilt
-                const yRotation = ((x - bounding.width / 2) / bounding.width) * 8;
-                
-                block.style.transform = `perspective(1000px) rotateX(${xRotation}deg) rotateY(${yRotation}deg) scale(1.02)`;
-                block.style.transition = 'transform 0.05s ease-out, opacity 0.5s ease, filter 0.5s ease';
-                block.style.zIndex = '5';
-
                 // Update card spotlight position and opacity
                 const spotlight = block.querySelector('.card-spotlight');
                 if (spotlight) {
@@ -446,10 +529,6 @@ function init() {
             });
             
             block.addEventListener('mouseleave', () => {
-                block.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)`;
-                block.style.transition = 'transform 0.5s ease-out, opacity 0.5s ease, filter 0.5s ease';
-                block.style.zIndex = '2';
-
                 // Fade out card spotlight
                 const spotlight = block.querySelector('.card-spotlight');
                 if (spotlight) {
