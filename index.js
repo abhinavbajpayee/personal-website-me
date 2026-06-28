@@ -146,8 +146,8 @@ function init() {
         });
     }, observerOptions);
 
-    // Register timeline, categories, leadership cards, certs, section headers, and contact panel
-    const animatableElements = document.querySelectorAll('.timeline-item, .skills-category-block, .leadership-role-card, .cert-item, .section-header, .contact-card');
+    // Register timeline, categories, leadership cards, certs, section headers, contact panel, and book details
+    const animatableElements = document.querySelectorAll('.timeline-item, .skills-category-block, .leadership-role-card, .cert-item, .section-header, .contact-card, .book-image-block, .book-details, .book-author-note, .book-certificate-block');
     animatableElements.forEach(el => animateOnScroll.observe(el));
 
     // --- Layout-Free Parallax Scrolling Effect ---
@@ -280,6 +280,32 @@ function init() {
 
         heroPortraitBlock.addEventListener('mouseleave', () => {
             const wrapper = heroPortraitBlock.querySelector('.hero-image-wrapper');
+            if (wrapper) {
+                wrapper.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)`;
+                wrapper.style.transition = 'transform 0.5s ease-out';
+            }
+        });
+    }
+
+    const bookCoverBlock = document.getElementById('book-cover-block');
+    if (bookCoverBlock && window.innerWidth > 992) {
+        bookCoverBlock.addEventListener('mousemove', (e) => {
+            const bounding = bookCoverBlock.getBoundingClientRect();
+            const x = e.clientX - bounding.left;
+            const y = e.clientY - bounding.top;
+            
+            const xRotation = ((y - bounding.height / 2) / bounding.height) * -12;
+            const yRotation = ((x - bounding.width / 2) / bounding.width) * 12;
+            
+            const wrapper = bookCoverBlock.querySelector('.book-image-wrapper');
+            if (wrapper) {
+                wrapper.style.transform = `perspective(1000px) rotateX(${xRotation}deg) rotateY(${yRotation}deg) scale(1.02)`;
+                wrapper.style.transition = 'transform 0.05s ease-out';
+            }
+        });
+
+        bookCoverBlock.addEventListener('mouseleave', () => {
+            const wrapper = bookCoverBlock.querySelector('.book-image-wrapper');
             if (wrapper) {
                 wrapper.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)`;
                 wrapper.style.transition = 'transform 0.5s ease-out';
