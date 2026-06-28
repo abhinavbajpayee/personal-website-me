@@ -106,7 +106,7 @@
                     </h1>
 
                     <h2 class="hero-subtitle" id="hero-sub-title">
-                        AI & ML Developer // Published Author // Student Leader
+                        Aspiring Data Analyst // Published Author // Student Leader
                     </h2>
 
                     <p class="hero-description" id="hero-desc-para">
@@ -255,93 +255,163 @@
                     <h2 class="section-title">TECHNICAL & CREATIVE DEPLOYMENTS</h2>
                 </div>
 
-                <div class="projects-grid">
-                    <!-- Project Card 1: Academic Ally -->
-                    <article class="project-card" id="project-card-1">
-                        <div class="project-image-container">
-                            <img src="project_quantum.png" alt="Academic Ally Platform Interface" class="project-image">
-                            <div class="project-overlay"></div>
-                        </div>
-                        <div class="project-info">
-                            <span class="project-category accent-red">AI & NATURAL LANGUAGE PROCESSING</span>
-                            <h3 class="project-title">01 // ACADEMIC ALLY</h3>
-                            <p class="project-description">
-                                An intelligent, context-aware academic assistant. Links a Flask backend engine utilizing
-                                NLP with a responsive React dashboard to deliver personalized educational guidance.
-                                Recognized at the IEEE Ignite-a-thon 2025.
-                            </p>
-                            <div class="project-actions">
-                                <div class="project-tags">
-                                    <span class="tag-pill">Python</span>
-                                    <span class="tag-pill">Flask</span>
-                                    <span class="tag-pill">React</span>
-                                    <span class="tag-pill">NLP</span>
-                                </div>
-                                <a href="https://github.com/abhinavbajpayee/academic-ally" target="_blank" class="project-link">
-                                    <span>LAUNCH DEPLOYMENT</span>
-                                    <svg viewBox="0 0 24 24"><path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/></svg>
-                                </a>
+                <div class="projects-slider-container">
+                    <div class="projects-slider" id="projects-slider">
+                        <!-- Project Slide 1: Academically -->
+                        <article class="project-slide active" id="project-slide-1" data-index="0">
+                            <div class="project-image-container">
+                                <img src="project_quantum.png" alt="Academically Platform Interface" class="project-image">
+                                <div class="project-overlay"></div>
                             </div>
-                        </div>
-                    </article>
+                            <div class="project-info">
+                                <span class="project-category accent-red">AI & NATURAL LANGUAGE PROCESSING</span>
+                                <h3 class="project-title">01 // ACADEMICALLY</h3>
+                                <p class="project-description">
+                                    An intelligent, context-aware academic assistant. Links a Flask backend engine utilizing
+                                    NLP with a responsive React dashboard to deliver personalized educational guidance.
+                                    Recognized at the IEEE Ignite-a-thon 2025.
+                                </p>
+                                <div class="project-actions">
+                                    <div class="project-tags">
+                                        <span class="tag-pill">Python</span>
+                                        <span class="tag-pill">Flask</span>
+                                        <span class="tag-pill">React</span>
+                                        <span class="tag-pill">NLP</span>
+                                        <span class="tag-pill">JavaScript</span>
+                                    </div>
+                                    <a href="https://academically-psi.vercel.app/" target="_blank" class="project-link">
+                                        <span>LAUNCH DEPLOYMENT</span>
+                                        <svg viewBox="0 0 24 24"><path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
 
-                    <!-- Project Card 2: Slot Smart -->
-                    <article class="project-card" id="project-card-2">
-                        <div class="project-image-container">
-                            <img src="project_neural.png" alt="Algorithmic Timetable Visualization"
-                                class="project-image">
-                            <div class="project-overlay"></div>
-                        </div>
-                        <div class="project-info">
-                            <span class="project-category accent-red">ALGORITHMIC SCHEDULING</span>
-                            <h3 class="project-title">02 // SLOT SMART</h3>
-                            <p class="project-description">
-                                A constraint-based scheduling engine that automates timetable generation. Leverages
-                                customized preference scoring matrices to eliminate scheduling conflicts. Smart India
-                                Hackathon Finalist.
-                            </p>
-                            <div class="project-actions">
-                                <div class="project-tags">
-                                    <span class="tag-pill">Python</span>
-                                    <span class="tag-pill">Optimization</span>
-                                    <span class="tag-pill">Algorithms</span>
-                                </div>
-                                <a href="https://github.com/abhinavbajpayee/slot-smart" target="_blank" class="project-link">
-                                    <span>LAUNCH DEPLOYMENT</span>
-                                    <svg viewBox="0 0 24 24"><path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/></svg>
-                                </a>
+                        <!-- Project Slide 2: Sign Language Detector -->
+                        <article class="project-slide" id="project-slide-2" data-index="1">
+                            <div class="project-image-container">
+                                <img src="project_sign_language.png" alt="Sign Language Detector Camera Interface" class="project-image">
+                                <div class="project-overlay"></div>
                             </div>
-                        </div>
-                    </article>
+                            <div class="project-info">
+                                <span class="project-category accent-red">COMPUTER VISION & DEEP LEARNING</span>
+                                <h3 class="project-title">02 // SIGN LANGUAGE DETECTOR</h3>
+                                <p class="project-description">
+                                    A real-time sign language recognition system. Employs OpenCV for hand landmark tracking 
+                                    and a customized deep learning classifier to translate gestures into text and speech seamlessly.
+                                </p>
+                                <div class="project-actions">
+                                    <div class="project-tags">
+                                        <span class="tag-pill">Python</span>
+                                        <span class="tag-pill">OpenCV</span>
+                                        <span class="tag-pill">TensorFlow</span>
+                                        <span class="tag-pill">ML</span>
+                                    </div>
+                                    <a href="https://github.com/abhinavbajpayee/sign-language-detector" target="_blank" class="project-link">
+                                        <span>LAUNCH DEPLOYMENT</span>
+                                        <svg viewBox="0 0 24 24"><path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
 
-                    <!-- Project Card 3: The Book -->
-                    <article class="project-card" id="project-card-3">
-                        <div class="project-image-container">
-                            <img src="book-cover.jpg" alt="9 Secrets of College Life Cover" class="project-image"
-                                style="object-position: center 20%;">
-                            <div class="project-overlay"></div>
-                        </div>
-                        <div class="project-info">
-                            <span class="project-category accent-red">EDITORIAL & PUBLISHING</span>
-                            <h3 class="project-title">03 // 9 SECRETS OF COLLEGE LIFE</h3>
-                            <p class="project-description">
-                                Wrote and published an actionable playbook on growth, purpose, and community building in
-                                university life. Offers a direct, practical look at leadership from the middle of the
-                                college experience.
-                            </p>
-                            <div class="project-actions">
-                                <div class="project-tags">
-                                    <span class="tag-pill">Writing</span>
-                                    <span class="tag-pill">Leadership</span>
-                                    <span class="tag-pill">Strategy</span>
-                                </div>
-                                <a href="https://www.amazon.com" target="_blank" class="project-link">
-                                    <span>LAUNCH DEPLOYMENT</span>
-                                    <svg viewBox="0 0 24 24"><path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/></svg>
-                                </a>
+                        <!-- Project Slide 3: Sales & E-Commerce Dashboard -->
+                        <article class="project-slide" id="project-slide-3" data-index="2">
+                            <div class="project-image-container">
+                                <img src="project_power_bi.png" alt="E-Commerce Performance Charts" class="project-image">
+                                <div class="project-overlay"></div>
                             </div>
-                        </div>
-                    </article>
+                            <div class="project-info">
+                                <span class="project-category accent-red">DATA ANALYTICS & BUSINESS INTELLIGENCE</span>
+                                <h3 class="project-title">03 // SALES & E-COMMERCE</h3>
+                                <p class="project-description">
+                                    A high-impact interactive Power BI analytics suite. Synthesizes cross-channel sales data 
+                                    into real-time dashboards tracking revenue trends, customer lifetime value, and logistics performance.
+                                </p>
+                                <div class="project-actions">
+                                    <div class="project-tags">
+                                        <span class="tag-pill">Power BI</span>
+                                        <span class="tag-pill">DAX</span>
+                                        <span class="tag-pill">Data Modeling</span>
+                                        <span class="tag-pill">Excel</span>
+                                    </div>
+                                    <a href="https://github.com/abhinavbajpayee/Sales-E-commerce-Power-BI-Dashboard.git" target="_blank" class="project-link">
+                                        <span>LAUNCH DEPLOYMENT</span>
+                                        <svg viewBox="0 0 24 24"><path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Project Slide 4: Personal Portfolio -->
+                        <article class="project-slide" id="project-slide-4" data-index="3">
+                            <div class="project-image-container">
+                                <img src="project_portfolio.png" alt="Portfolio Website Interface Design" class="project-image">
+                                <div class="project-overlay"></div>
+                            </div>
+                            <div class="project-info">
+                                <span class="project-category accent-red">PORTFOLIO & UI ENGINEERING</span>
+                                <h3 class="project-title">04 // PERSONAL PORTFOLIO</h3>
+                                <p class="project-description">
+                                    The architecture behind this high-performance site. Employs clean vanilla CSS, layout-free 
+                                    scroll calculations, custom keyframe loaders, and a fluid 3D parallax hero designed for premium aesthetics.
+                                </p>
+                                <div class="project-actions">
+                                    <div class="project-tags">
+                                        <span class="tag-pill">JavaScript</span>
+                                        <span class="tag-pill">CSS3</span>
+                                        <span class="tag-pill">HTML5</span>
+                                        <span class="tag-pill">Animations</span>
+                                    </div>
+                                    <a href="https://personal-website-me-mu.vercel.app/" target="_blank" class="project-link">
+                                        <span>LAUNCH DEPLOYMENT</span>
+                                        <svg viewBox="0 0 24 24"><path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Project Slide 5: LinkedIn Analysis Dashboard -->
+                        <article class="project-slide" id="project-slide-5" data-index="4">
+                            <div class="project-image-container">
+                                <img src="project_linkedin_analysis.png" alt="LinkedIn Profile Engagement and Connection Network Graph" class="project-image">
+                                <div class="project-overlay"></div>
+                            </div>
+                            <div class="project-info">
+                                <span class="project-category accent-red">SOCIAL NETWORK ANALYTICS & DATA VISUALIZATION</span>
+                                <h3 class="project-title">05 // LINKEDIN ANALYSIS</h3>
+                                <p class="project-description">
+                                    An interactive analytics dashboard for LinkedIn profile metrics and network connections. 
+                                    Visualizes professional growth, engagement trends, and connection topologies utilizing dynamic graph overlays.
+                                </p>
+                                <div class="project-actions">
+                                    <div class="project-tags">
+                                        <span class="tag-pill">JavaScript</span>
+                                        <span class="tag-pill">D3.js</span>
+                                        <span class="tag-pill">React</span>
+                                        <span class="tag-pill">API Integration</span>
+                                    </div>
+                                    <a href="https://link-analysis-dashboard.vercel.app/" target="_blank" class="project-link">
+                                        <span>LAUNCH DEPLOYMENT</span>
+                                        <svg viewBox="0 0 24 24"><path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Slider Navigation Controls -->
+                    <div class="slider-controls">
+                        <button class="slider-arrow prev" id="slider-prev-btn" aria-label="Previous Project">
+                            <svg viewBox="0 0 24 24"><path fill="currentColor" d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z"/></svg>
+                        </button>
+                        
+                        <div class="slider-indicators" id="slider-indicators"></div>
+                        
+                        <button class="slider-arrow next" id="slider-next-btn" aria-label="Next Project">
+                            <svg viewBox="0 0 24 24"><path fill="currentColor" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/></svg>
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -410,36 +480,70 @@
                     <h2 class="section-title">CAPABILITIES</h2>
                 </div>
 
-                <div class="skills-wrapper">
-                    <!-- Category 1: Technical -->
+                <!-- Interactive Audience Mode Switcher -->
+                <div class="skills-toggle-wrapper">
+                    <span class="toggle-label">OPTIMIZE MATRIX FOR:</span>
+                    <div class="skills-toggle-buttons">
+                        <button class="skills-toggle-btn active" data-mode="all">
+                            <span class="btn-indicator"></span>
+                            FULL MATRIX
+                        </button>
+                        <button class="skills-toggle-btn" data-mode="recruiter">
+                            <span class="btn-indicator"></span>
+                            DATA RECRUITER
+                        </button>
+                        <button class="skills-toggle-btn" data-mode="academic">
+                            <span class="btn-indicator"></span>
+                            ACADEMIC ADMISSIONS
+                        </button>
+                    </div>
+                </div>
+
+                <div class="skills-wrapper mode-all">
+                    <!-- Category 1: Data Analyst Focus -->
                     <div class="skills-category-block" id="skills-cat-1">
-                        <h3 class="skills-category-title">SYSTEMS & AI DEVELOPMENT</h3>
+                        <div class="card-spotlight"></div>
+                        <h3 class="skills-category-title">DATA ANALYTICS & STRATEGY</h3>
                         <div class="skills-chips-group">
-                            <span class="skill-chip">Python</span>
-                            <span class="skill-chip">React.js</span>
-                            <span class="skill-chip">Flask</span>
-                            <span class="skill-chip">JavaScript</span>
-                            <span class="skill-chip">Node.js</span>
-                            <span class="skill-chip">HTML/CSS</span>
-                            <span class="skill-chip">C (Basics)</span>
-                            <span class="skill-chip">NLP Basics</span>
-                            <span class="skill-chip">Optimization Algorithms</span>
+                            <span class="skill-chip">SQL</span>
+                            <span class="skill-chip">Python (Pandas / NumPy)</span>
+                            <span class="skill-chip">Power BI & Excel</span>
+                            <span class="skill-chip">Data Modeling</span>
+                            <span class="skill-chip">ETL & Pipelining</span>
+                            <span class="skill-chip">Statistical Analysis</span>
+                            <span class="skill-chip">Data Storytelling</span>
+                            <span class="skill-chip">KPI Definition</span>
                         </div>
                     </div>
 
-                    <!-- Category 2: Management -->
+                    <!-- Category 2: Academic & AI Focus -->
                     <div class="skills-category-block" id="skills-cat-2">
-                        <h3 class="skills-category-title">LEADERSHIP & GROWTH</h3>
+                        <div class="card-spotlight"></div>
+                        <h3 class="skills-category-title">ACADEMIC FOUNDATIONS & AI</h3>
                         <div class="skills-chips-group">
-                            <span class="skill-chip">GTM Strategy</span>
+                            <span class="skill-chip">Natural Language Processing</span>
+                            <span class="skill-chip">Computer Vision</span>
+                            <span class="skill-chip">Optimization Algorithms</span>
+                            <span class="skill-chip">Machine Learning</span>
+                            <span class="skill-chip">Data Structures & Algos</span>
+                            <span class="skill-chip">C/C++ & JavaScript</span>
+                            <span class="skill-chip">Technical Writing</span>
+                            <span class="skill-chip">Research Methodologies</span>
+                        </div>
+                    </div>
+
+                    <!-- Category 3: Leadership & Communication -->
+                    <div class="skills-category-block" id="skills-cat-3">
+                        <div class="card-spotlight"></div>
+                        <h3 class="skills-category-title">LEADERSHIP & OPERATIONS</h3>
+                        <div class="skills-chips-group">
+                            <span class="skill-chip">Campus Leadership</span>
+                            <span class="skill-chip">GTM & Growth Strategy</span>
                             <span class="skill-chip">Public Relations</span>
-                            <span class="skill-chip">Audience Research</span>
-                            <span class="skill-chip">Recruitment Ops</span>
                             <span class="skill-chip">Public Speaking</span>
-                            <span class="skill-chip">Team Management</span>
-                            <span class="skill-chip">Negotiation</span>
-                            <span class="skill-chip">Brand Strategy</span>
-                            <span class="skill-chip">Canva & Figma</span>
+                            <span class="skill-chip">Team & HR Operations</span>
+                            <span class="skill-chip">Stakeholder Management</span>
+                            <span class="skill-chip">Product UI/UX (Figma)</span>
                         </div>
                     </div>
                 </div>
@@ -518,7 +622,7 @@
                             <a href="https://www.linkedin.com/in/abhinav-bajpai-58b36128b/" target="_blank"
                                 class="social-link">LINKEDIN</a> //
                             <a href="https://github.com/abhinavbajpayee" target="_blank" class="social-link">GITHUB</a> //
-                            <a href="https://leetcode.com/abhinavbajpai" target="_blank"
+                            <a href="https://leetcode.com/u/abhinavbajpai88/" target="_blank"
                                 class="social-link">LEETCODE</a>
                         </div>
                     </div>

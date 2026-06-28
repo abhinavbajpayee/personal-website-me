@@ -111,8 +111,8 @@ function init() {
         });
     }, observerOptions);
 
-    // Register timeline, projects, categories, leadership cards, and certs
-    const animatableElements = document.querySelectorAll('.timeline-item, .project-card, .skills-category-block, .leadership-role-card, .cert-item');
+    // Register timeline, categories, leadership cards, and certs
+    const animatableElements = document.querySelectorAll('.timeline-item, .skills-category-block, .leadership-role-card, .cert-item');
     animatableElements.forEach(el => animateOnScroll.observe(el));
 
     // --- Layout-Free Parallax Scrolling Effect ---
@@ -258,6 +258,204 @@ function init() {
                     formStatus.style.display = 'none';
                 }, 8000);
             }, 2500);
+        });
+    }
+
+    // --- Projects Slider (3D Animated Carousel) ---
+    const projectsSlider = document.getElementById('projects-slider');
+    const projectSlides = document.querySelectorAll('.project-slide');
+    const sliderPrevBtn = document.getElementById('slider-prev-btn');
+    const sliderNextBtn = document.getElementById('slider-next-btn');
+    const sliderIndicatorsContainer = document.getElementById('slider-indicators');
+    
+    if (projectsSlider && projectSlides.length > 0) {
+        let currentSlideIdx = 0;
+        
+        // Dynamically build indicator dots
+        sliderIndicatorsContainer.innerHTML = '';
+        projectSlides.forEach((_, idx) => {
+            const dot = document.createElement('span');
+            dot.classList.add('slider-indicator');
+            if (idx === 0) dot.classList.add('active');
+            dot.setAttribute('data-slide-index', idx);
+            sliderIndicatorsContainer.appendChild(dot);
+            
+            // Add click listener to indicator dots
+            dot.addEventListener('click', () => {
+                currentSlideIdx = idx;
+                updateProjectsSlider();
+            });
+        });
+        
+        const sliderIndicators = document.querySelectorAll('.slider-indicator');
+        
+        function updateProjectsSlider() {
+            // Apply active class to current slide and remove from others
+            projectSlides.forEach((slide, idx) => {
+                if (idx === currentSlideIdx) {
+                    slide.classList.add('active');
+                } else {
+                    slide.classList.remove('active');
+                }
+            });
+            
+            // Update active state of indicators
+            sliderIndicators.forEach((indicator, idx) => {
+                if (idx === currentSlideIdx) {
+                    indicator.classList.add('active');
+                } else {
+                    indicator.classList.remove('active');
+                }
+            });
+            
+            // Calculate translation centering offset
+            const containerWidth = projectsSlider.parentElement.offsetWidth;
+            const activeSlide = projectSlides[currentSlideIdx];
+            const slideWidth = activeSlide.offsetWidth;
+            const slideLeft = activeSlide.offsetLeft;
+            
+            // Translate the track horizontally to center the active slide
+            const translation = containerWidth / 2 - slideLeft - slideWidth / 2;
+            projectsSlider.style.transform = `translateX(${translation}px)`;
+        }
+        
+        // Click handlers for arrow buttons
+        if (sliderPrevBtn) {
+            sliderPrevBtn.addEventListener('click', () => {
+                if (currentSlideIdx > 0) {
+                    currentSlideIdx--;
+                    updateProjectsSlider();
+                }
+            });
+        }
+        
+        if (sliderNextBtn) {
+            sliderNextBtn.addEventListener('click', () => {
+                if (currentSlideIdx < projectSlides.length - 1) {
+                    currentSlideIdx++;
+                    updateProjectsSlider();
+                }
+            });
+        }
+        
+        // Add click listener on non-active slides to navigate to them
+        projectSlides.forEach((slide, idx) => {
+            slide.addEventListener('click', (e) => {
+                // If clicking links/buttons, do not trigger slide switch
+                if (e.target.closest('.project-link') || e.target.closest('.tag-pill')) {
+                    return;
+                }
+                if (idx !== currentSlideIdx) {
+                    currentSlideIdx = idx;
+                    updateProjectsSlider();
+                }
+            });
+        });
+        
+        // Touch Swipe Gestures
+        let startX = 0;
+        let startY = 0;
+        
+        projectsSlider.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            startY = e.touches[0].clientY;
+        }, { passive: true });
+        
+        projectsSlider.addEventListener('touchend', (e) => {
+            const endX = e.changedTouches[0].clientX;
+            const endY = e.changedTouches[0].clientY;
+            
+            const diffX = endX - startX;
+            const diffY = endY - startY;
+            
+            // Determine if horizontal swipe was major
+            if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50) {
+                if (diffX > 0) {
+                    // Swiped right (show previous)
+                    if (currentSlideIdx > 0) {
+                        currentSlideIdx--;
+                        updateProjectsSlider();
+                    }
+                } else {
+                    // Swiped left (show next)
+                    if (currentSlideIdx < projectSlides.length - 1) {
+                        currentSlideIdx++;
+                        updateProjectsSlider();
+                    }
+                }
+            }
+        }, { passive: true });
+        
+        // Initial positioning calculation
+        // Wrap in a short timeout to ensure container layout dimensions are populated
+        setTimeout(updateProjectsSlider, 100);
+        
+        // Re-center active slide on window resize
+        window.addEventListener('resize', updateProjectsSlider);
+    }
+
+    // --- Skills Matrix Mode Switcher ---
+    const skillsToggleButtons = document.querySelectorAll('.skills-toggle-btn');
+    const skillsWrapper = document.querySelector('.skills-wrapper');
+    
+    if (skillsToggleButtons.length > 0 && skillsWrapper) {
+        skillsToggleButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active toggle button
+                skillsToggleButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Get chosen mode
+                const mode = btn.getAttribute('data-mode');
+                
+                // Reset wrapper classes
+                skillsWrapper.classList.remove('mode-all', 'mode-recruiter', 'mode-academic');
+                skillsWrapper.classList.add(`mode-${mode}`);
+            });
+        });
+    }
+
+    // --- Interactive 3D Tilt Hover Effect for Skills Cards ---
+    const skillsCategoryBlocks = document.querySelectorAll('.skills-category-block');
+    if (skillsCategoryBlocks.length > 0 && window.innerWidth > 992) {
+        skillsCategoryBlocks.forEach(block => {
+            block.addEventListener('mousemove', (e) => {
+                // Do not apply tilt if it is currently faded out in a different mode
+                const parent = block.parentElement;
+                if (parent.classList.contains('mode-recruiter') && block.id !== 'skills-cat-1' && block.id !== 'skills-cat-3') return;
+                if (parent.classList.contains('mode-academic') && block.id !== 'skills-cat-2' && block.id !== 'skills-cat-3') return;
+                
+                const bounding = block.getBoundingClientRect();
+                const x = e.clientX - bounding.left;
+                const y = e.clientY - bounding.top;
+                
+                const xRotation = ((y - bounding.height / 2) / bounding.height) * -8; // slight tilt
+                const yRotation = ((x - bounding.width / 2) / bounding.width) * 8;
+                
+                block.style.transform = `perspective(1000px) rotateX(${xRotation}deg) rotateY(${yRotation}deg) scale(1.02)`;
+                block.style.transition = 'transform 0.05s ease-out, opacity 0.5s ease, filter 0.5s ease';
+                block.style.zIndex = '5';
+
+                // Update card spotlight position and opacity
+                const spotlight = block.querySelector('.card-spotlight');
+                if (spotlight) {
+                    spotlight.style.left = `${x}px`;
+                    spotlight.style.top = `${y}px`;
+                    spotlight.style.opacity = '1';
+                }
+            });
+            
+            block.addEventListener('mouseleave', () => {
+                block.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)`;
+                block.style.transition = 'transform 0.5s ease-out, opacity 0.5s ease, filter 0.5s ease';
+                block.style.zIndex = '2';
+
+                // Fade out card spotlight
+                const spotlight = block.querySelector('.card-spotlight');
+                if (spotlight) {
+                    spotlight.style.opacity = '0';
+                }
+            });
         });
     }
 }
